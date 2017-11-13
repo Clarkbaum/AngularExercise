@@ -1,0 +1,19 @@
+{
+  "name": "angular-exercise",
+  "version": "1.0.0",
+  "description": "angular exercise",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Clarkbaum/AngularExercise.git"
+  },
+  "author": "nathan clark baumgartner",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Clarkbaum/AngularExercise/issues"
+  },
+  "homepage": "https://github.com/Clarkbaum/AngularExercise#readme"
+}
