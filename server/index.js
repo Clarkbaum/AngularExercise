@@ -22,22 +22,22 @@ app.use(function(req, res, next) {
   next();
 });
 
-app.post('/xxx', function(req, res){
+app.post('/profiles', function(req, res){
   //post new profiles into database. expects body with title, author, date, and body
   profile.create(req, res)
 })
 
-app.put('/xxx/:xxx', function(req, res){
+app.put('/profiles/:profile', function(req, res){
   //the put will include the profile id in the request.params
   profile.update(req, res)
 })
 
-app.get('/xxx', function(req, res){
+app.get('/profiles', function(req, res){
   //retrieves profiles from database
   profile.get(req, res)
 })
 
-app.delete('/xxx/:xxx', function(req, res){
+app.delete('/profiles/:profile', function(req, res){
   //the delete will include the profile id in the request.params
   profile.delete(req, res)
 })
