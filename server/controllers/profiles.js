@@ -30,7 +30,7 @@ exports.update = (request, response) => {
 
 exports.delete = (request, response) => {
   Profile.findById(request.params.profile).exec()
-  .then(doc => doc.remove())
-  .then(doc => response.status(200).json(doc))
+  .then(user => user.remove())
+  .then(user => response.status(200).json(user))
   .catch((err) => console.log("profile.delete error", err));
 };
