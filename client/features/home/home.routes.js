@@ -6,6 +6,7 @@ export default function routes($stateProvider) {
       url: '/',
       template: require('./home.html'),
       controller: 'HomeController',
-      controllerAs: 'home'
+      controllerAs: 'home',
+      styles: ['h1 { font-style: italic; }']
     });
 }
