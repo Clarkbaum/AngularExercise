@@ -22,13 +22,16 @@ export default angular.module('app.home', [uirouter, randomNames])
 
     $scope.addProfile = function() {
       console.log("addprofile clicked");
-      console.log("$scope.name", $scope.name);
-      console.log("$scope.email", $scope.email);
       var profile = {
         'name': $scope.name,
         'email': $scope.email
       }
       $scope.random.addOne(profile);
+    }
+
+    $scope.profileDelete = function(id) {
+      console.log("profileDelete clicked");
+      $scope.random.profileDelete(id);
     }
   })
   .name;

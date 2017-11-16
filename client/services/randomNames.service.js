@@ -50,9 +50,19 @@ export default angular.module('services.random-names', [])
       return resp;
     });
   };
+
+  var profileDelete = function(id) {
+    return $http({
+      method: 'DELETE',
+      url: 'http://localhost:8000/profiles/:id',
+    })
+    .then(console.log("profile deleted"));
+  }
+
   return {
     'getAll': getAll,
-    'addOne': addOne
+    'addOne': addOne,
+    'profileDelete': profileDelete
   };
 })
 .name;
