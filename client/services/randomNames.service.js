@@ -40,11 +40,11 @@ export default angular.module('services.random-names', [])
     });
   };
 
-  var addOne = function(link) {
+  var addOne = function(profile) {
     return $http({
       method: 'POST',
       url: 'http://localhost:8000/profiles',
-      data: link
+      data: profile
     })
     .then(function (resp) {
       return resp;

@@ -12,22 +12,23 @@ export default angular.module('app.home', [uirouter, randomNames])
   .controller('HomeController', function($scope, profiles) {
 
     $scope.random = profiles;
-    $scope.name = 'World';
-
-    $scope.changeName = function() {
-      console.log("changename clicked")
-      $scope.name = 'angular-tips';
-    }
 
     $scope.getAll = function() {
-      //this function is returning a promise
-      $scope.random.getAll().then(function(data){
+      //this function is returning a promise 
+      $scope.random.getAll().then(function(data) {
         $scope.profiles = data
       });
     }
 
     $scope.addProfile = function() {
-      console.log("addprofile clicked")
+      console.log("addprofile clicked");
+      console.log("$scope.name", $scope.name);
+      console.log("$scope.email", $scope.email);
+      var profile = {
+        'name': $scope.name,
+        'email': $scope.email
+      }
+      $scope.random.addOne(profile);
     }
   })
   .name;
