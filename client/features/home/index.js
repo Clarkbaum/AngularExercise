@@ -9,17 +9,23 @@ import randomNames from '../../services/randomNames.service';
 
 export default angular.module('app.home', [uirouter, randomNames])
   .config(routing)
-  .controller('HomeController', function($scope, randomNames) {
+  .controller('HomeController', function($scope, profiles) {
 
-    $scope.random = randomNames;
+    $scope.random = profiles;
     $scope.name = 'World';
 
     $scope.changeName = function() {
+      console.log("changename clicked")
       $scope.name = 'angular-tips';
     }
 
-    $scope.randomName = function() {
-      $scope.name = $scope.random.getName();
+    // $scope.randomName = function() {
+    //   $scope.name = $scope.random.getName();
+    // }
+
+    $scope.getAll = function() {
+      $scope.profiles = $scope.random.getAll();
+      console.log("$scope.random.getAll();", $scope.random.getAll().$$state)
     }
 
     $scope.addProfile = function() {

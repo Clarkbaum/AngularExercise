@@ -3,7 +3,8 @@
 </div>
 
 <button class="btn btn-primary" ng-click="changeName()">Change</button>
-<button class="btn btn-danger" ng-click="randomName()">Random</button>
+<!-- <button class="btn btn-danger" ng-click="randomName()">Random</button> -->
+<button class="btn btn-danger" ng-click="getAll()">get all</button>
 
 <div>
   <form>
@@ -13,4 +14,8 @@
     <input type="text" ng-model="email"><br>
     <input type="submit" ng-click="addProfile()">
   </form>
+</div>
+<div>
+  Profiles <br>
+  {{profiles}}
 </div>
