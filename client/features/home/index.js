@@ -19,13 +19,11 @@ export default angular.module('app.home', [uirouter, randomNames])
       $scope.name = 'angular-tips';
     }
 
-    // $scope.randomName = function() {
-    //   $scope.name = $scope.random.getName();
-    // }
-
     $scope.getAll = function() {
-      $scope.profiles = $scope.random.getAll();
-      console.log("$scope.random.getAll();", $scope.random.getAll().$$state)
+      //this function is returning a promise
+      $scope.random.getAll().then(function(data){
+        $scope.profiles = data
+      });
     }
 
     $scope.addProfile = function() {
