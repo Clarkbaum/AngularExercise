@@ -11,6 +11,10 @@ export default class HomeController {
   randomName() {
     this.name = this.random.getName();
   }
+
+  addProfile() {
+    console.log("addprofile clicked")
+  }
 }
 
 HomeController.$inject = ['randomNames'];
