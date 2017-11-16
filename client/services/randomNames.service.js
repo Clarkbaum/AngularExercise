@@ -37,6 +37,9 @@ export default angular.module('services.random-names', [])
     })
     .then(function (resp) {
       return resp.data;
+    })
+    .catch(function (error) {
+      console.error(error);
     });
   };
 
@@ -48,15 +51,22 @@ export default angular.module('services.random-names', [])
     })
     .then(function (resp) {
       return resp;
+    })
+    .catch(function (error) {
+      console.error(error);
     });
   };
 
   var profileDelete = function(id) {
+    console.log("id", id)
     return $http({
       method: 'DELETE',
       url: 'http://localhost:8000/profiles/:id',
     })
-    .then(console.log("profile deleted"));
+    .then(console.log("profile deleted"))
+    .catch(function (error) {
+      console.error(error);
+    });
   }
 
   return {
