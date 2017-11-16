@@ -4,10 +4,26 @@ import angular from 'angular';
 import uirouter from 'angular-ui-router';
 
 import routing from './home.routes';
-import HomeController from './home.controller';
+//import HomeController from './home.controller';
 import randomNames from '../../services/randomNames.service';
 
 export default angular.module('app.home', [uirouter, randomNames])
   .config(routing)
-  .controller('HomeController', HomeController)
+  .controller('HomeController', function($scope, randomNames) {
+
+    $scope.random = randomNames;
+    $scope.name = 'World';
+
+    $scope.changeName = function() {
+      $scope.name = 'angular-tips';
+    }
+
+    $scope.randomName = function() {
+      $scope.name = $scope.random.getName();
+    }
+
+    $scope.addProfile = function() {
+      console.log("addprofile clicked")
+    }
+  })
   .name;

@@ -1,9 +1,9 @@
 <div id="homeheader" class="jumbotron">
-  <h1 class="test" >Hello, {{home.name}}</h1>
+  <h1 class="test" >Hello, {{name}}</h1>
 </div>
 
-<button class="btn btn-primary" ng-click="home.changeName()">Change</button>
-<button class="btn btn-danger" ng-click="home.randomName()">Random</button>
+<button class="btn btn-primary" ng-click="changeName()">Change</button>
+<button class="btn btn-danger" ng-click="randomName()">Random</button>
 
 <div>
   <form>
@@ -11,6 +11,6 @@
     <input type="text" ng-model="name"><br>
     Eamil:<br>
     <input type="text" ng-model="email"><br>
-    <input type="submit" ng-click="home.addProfile()">
+    <input type="submit" ng-click="addProfile()">
   </form>
 </div>
