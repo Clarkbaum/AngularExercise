@@ -12,9 +12,10 @@ Angular Challenge is a simple full stack application usng the MEAN tech stack, b
 
 ## how to run
 
-open a new tab and run
+navigate to root directory and run
 
 ```
+npm install
 npm run server
 ```
 
