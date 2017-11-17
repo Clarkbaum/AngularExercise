@@ -58,7 +58,6 @@ export default angular.module('services.random-names', [])
   };
 
   var profileDelete = function(id) {
-    console.log("id", id)
     return $http({
       method: 'DELETE',
       url: 'http://localhost:8000/profiles/' + id
@@ -70,9 +69,6 @@ export default angular.module('services.random-names', [])
   }
 
   var profileEdit = function(id, profile) {
-    console.log("profile.name", profile.name)
-    console.log("profile.email", profile.email)
-    console.log("id", id)
     return $http({
       method: 'PUT',
       url: 'http://localhost:8000/profiles/' + id,
