@@ -13,3 +13,11 @@ body {
 PTitle {
   text-align: center;
 }
+
+test {
+  padding-left: 20px;
+}
+
+form {
+  padding-left: 20px;
+}

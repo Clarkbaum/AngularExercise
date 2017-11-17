@@ -4,9 +4,9 @@ import angular from 'angular';
 import uirouter from 'angular-ui-router';
 
 import routing from './home.routes';
-import randomNames from '../../services/randomNames.service';
+import appServices from '../../services/app.service';
 
-export default angular.module('app.home', [uirouter, randomNames])
+export default angular.module('app.home', [uirouter, appServices])
   .config(routing)
   .controller('HomeController', function($scope, profiles) {
     $scope.service = profiles;
@@ -32,7 +32,6 @@ export default angular.module('app.home', [uirouter, randomNames])
     $scope.profileDelete = function(id) {
       console.log("profileDelete clicked");
       $scope.service.profileDelete(id);
-      $scope.getAll();
       window.location.reload();
     }
 
@@ -43,7 +42,6 @@ export default angular.module('app.home', [uirouter, randomNames])
         'email': $scope.email
       }
       $scope.service.profileEdit(id, profile);
-      $scope.getAll();
       window.location.reload();
     }
   })
