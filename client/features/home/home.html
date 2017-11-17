@@ -16,17 +16,16 @@
   </form>
 </div>
 <div>
-  <PTitle><h1>Profiles</h1></PTitle> <br>
-  {{profiles}}
+  <PTitle><h1>Profiles</h1></PTitle> 
+  <br>
   <profiles >
     <div class="profile" ng-repeat="profile in profiles">
       <div class="profileInfo">
         <div class="name"> Name: {{profile.name}} </div>
-        <div class="email"> Email: {{profile.email}} 
+        <div class="email"> Email: {{profile.email}} </div>
           <span><button ng-click="profileEdit(profile._id)">Edit</button></span>
           <span><button ng-click="profileDelete(profile._id)">Delete</button></span>
-        </div>
-        <br>
+        <br><br>
       </div>
     </div>
   </div>

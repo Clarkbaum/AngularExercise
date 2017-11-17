@@ -21,7 +21,6 @@
   "homepage": "https://github.com/Clarkbaum/AngularExercise#readme",
   "dependencies": {
     "angular": "^1.5.0",
-    "angular-material": "^1.1.5",
     "angular-ui-router": "^0.4.3",
     "bootstrap": "^3.3.7",
     "mongoose": "^4.13.2"
