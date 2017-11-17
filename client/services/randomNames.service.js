@@ -61,7 +61,7 @@ export default angular.module('services.random-names', [])
     console.log("id", id)
     return $http({
       method: 'DELETE',
-      url: 'http://localhost:8000/profiles/:id',
+      url: 'http://localhost:8000/profiles/' + id
     })
     .then(console.log("profile deleted"))
     .catch(function (error) {
@@ -69,10 +69,26 @@ export default angular.module('services.random-names', [])
     });
   }
 
+  var profileEdit = function(id, profile) {
+    console.log("profile.name", profile.name)
+    console.log("profile.email", profile.email)
+    console.log("id", id)
+    return $http({
+      method: 'PUT',
+      url: 'http://localhost:8000/profiles/' + id,
+      data: profile
+    })
+    .then(console.log("profile edited"))
+    .catch(function (error) {
+      console.errpr(error);
+    })
+  }
+
   return {
     'getAll': getAll,
     'addOne': addOne,
-    'profileDelete': profileDelete
+    'profileDelete': profileDelete,
+    'profileEdit': profileEdit
   };
 })
 .name;

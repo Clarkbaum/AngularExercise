@@ -11,11 +11,11 @@ export default angular.module('app.home', [uirouter, randomNames])
   .config(routing)
   .controller('HomeController', function($scope, profiles) {
 
-    $scope.random = profiles;
+    $scope.service = profiles;
 
     $scope.getAll = function() {
       //this function is returning a promise 
-      $scope.random.getAll().then(function(data) {
+      $scope.service.getAll().then(function(data) {
         $scope.profiles = data
       });
     }
@@ -26,12 +26,21 @@ export default angular.module('app.home', [uirouter, randomNames])
         'name': $scope.name,
         'email': $scope.email
       }
-      $scope.random.addOne(profile);
+      $scope.service.addOne(profile);
     }
 
     $scope.profileDelete = function(id) {
       console.log("profileDelete clicked");
-      $scope.random.profileDelete(id);
+      $scope.service.profileDelete(id);
+    }
+
+    $scope.profileEdit = function(id) {
+      console.log("profileEdit clicked");
+      var profile = {
+        'name': $scope.name,
+        'email': $scope.email
+      }
+      $scope.service.profileEdit(id, profile);
     }
   })
   .name;

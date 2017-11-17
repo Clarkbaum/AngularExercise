@@ -27,7 +27,7 @@ app.post('/profiles', function(req, res){
   profile.create(req, res)
 })
 
-app.put('/profiles/:profile', function(req, res){
+app.put('/profiles/:id', function(req, res){
   //the put will include the profile id in the request.params
   profile.update(req, res)
 })
@@ -37,7 +37,7 @@ app.get('/profiles', function(req, res){
   profile.get(req, res)
 })
 
-app.delete('/profiles/:profile', function(req, res){
+app.delete('/profiles/:id', function(req, res){
   //the delete will include the profile id in the request.params
   profile.delete(req, res)
 })

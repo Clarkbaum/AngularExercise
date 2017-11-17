@@ -15,8 +15,11 @@ exports.get = (request, response) => {
 };
 
 exports.update = (request, response) => {
-  Profile.findById(request.params.profile).exec()
+  console.log("request.params.id", request.params.id)
+  Profile.findById(request.params.id).exec()
   .then((data) => {
+    console.log("data", data)
+    console.log("request.body", request.body)
     const user = data;
     user.name = request.body.name;
     user.email = request.body.email;
@@ -29,7 +32,7 @@ exports.update = (request, response) => {
 };
 
 exports.delete = (request, response) => {
-  Profile.findById(request.params.profile).exec()
+  Profile.findById(request.params.id).exec()
   .then(user => user.remove())
   .then(user => response.status(200).json(user))
   .catch((err) => console.log("profile.delete error", err));
