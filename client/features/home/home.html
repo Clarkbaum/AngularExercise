@@ -1,22 +1,24 @@
 <div id="homeheader" class="jumbotron">
-  <h1 >Angular Excercise</h1>
+  <header> <h1>Angular Excercise</h1></header>
 </div>
-
+<br>
 <button class="btn btn-danger" ng-click="getAll()">get all</button>
-
+<br>
+<br>
 <div>
   <form>
     Name:<br>
     <input type="text" ng-model="name"><br>
     Eamil:<br>
     <input type="text" ng-model="email"><br>
+    <br>
     <input type="submit" ng-click="addProfile()">
   </form>
 </div>
 <div>
-  Profiles <br>
+  <PTitle><h1>Profiles</h1></PTitle> <br>
   {{profiles}}
-  <div class="profiles">
+  <profiles >
     <div class="profile" ng-repeat="profile in profiles">
       <div class="profileInfo">
         <div class="name"> Name: {{profile.name}} </div>
@@ -28,4 +30,4 @@
       </div>
     </div>
   </div>
-</div>
+</profiles>
