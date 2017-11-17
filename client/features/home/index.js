@@ -9,7 +9,6 @@ import randomNames from '../../services/randomNames.service';
 export default angular.module('app.home', [uirouter, randomNames])
   .config(routing)
   .controller('HomeController', function($scope, profiles) {
-
     $scope.service = profiles;
 
     $scope.getAll = function() {
@@ -18,6 +17,7 @@ export default angular.module('app.home', [uirouter, randomNames])
         $scope.profiles = data
       });
     }
+    $scope.getAll();
 
     $scope.addProfile = function() {
       console.log("addprofile clicked");
@@ -26,11 +26,14 @@ export default angular.module('app.home', [uirouter, randomNames])
         'email': $scope.email
       }
       $scope.service.addOne(profile);
+      window.location.reload();
     }
 
     $scope.profileDelete = function(id) {
       console.log("profileDelete clicked");
       $scope.service.profileDelete(id);
+      $scope.getAll();
+      window.location.reload();
     }
 
     $scope.profileEdit = function(id) {
@@ -40,6 +43,8 @@ export default angular.module('app.home', [uirouter, randomNames])
         'email': $scope.email
       }
       $scope.service.profileEdit(id, profile);
+      $scope.getAll();
+      window.location.reload();
     }
   })
   .name;

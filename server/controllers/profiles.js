@@ -15,11 +15,8 @@ exports.get = (request, response) => {
 };
 
 exports.update = (request, response) => {
-  console.log("request.params.id", request.params.id)
   Profile.findById(request.params.id).exec()
   .then((data) => {
-    console.log("data", data)
-    console.log("request.body", request.body)
     const user = data;
     user.name = request.body.name;
     user.email = request.body.email;

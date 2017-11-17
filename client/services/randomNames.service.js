@@ -48,7 +48,7 @@ export default angular.module('services.random-names', [])
     })
     .then(console.log("profile edited"))
     .catch(function (error) {
-      console.errpr(error);
+      console.error(error);
     })
   }
 
